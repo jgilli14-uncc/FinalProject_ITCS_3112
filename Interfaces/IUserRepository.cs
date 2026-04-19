@@ -1,3 +1,4 @@
+namespace FinalProject3112.Interfaces;
 public interface IUserRepository
 {
     public AddUser(string name, string password, int vUserID);

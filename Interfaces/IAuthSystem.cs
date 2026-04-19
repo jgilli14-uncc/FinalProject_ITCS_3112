@@ -1,3 +1,4 @@
+namespace FinalProject3112.Interfaces;
 public interface IAuthSystem
 {
     public Login(int userID, string password);

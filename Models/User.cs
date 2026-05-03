@@ -5,6 +5,7 @@ public class User
     public int userID { get; set; }
     public string username { get; set; }
     protected string password { get; set; }
+    public UserCredentials userCredentials { get; set; }
 
     public User(string username, string password)
     {

@@ -1,3 +1,5 @@
+namespace FinalProject3112.Models;
+
 public class Rating
 {
     public int gameID { get; set; }
@@ -19,5 +21,4 @@ public class Rating
         Console.WriteLine($"Rating Number: {ratingNum}");
         Console.WriteLine($"Rating Text: {ratingText}");
     }
-    
 }

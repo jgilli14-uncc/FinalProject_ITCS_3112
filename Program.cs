@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using FinalProject3112.Menus;
+
+namespace FinalProject3112
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Menu menu = new Menu();
+            menu.Start();
+        }
+    }
+}

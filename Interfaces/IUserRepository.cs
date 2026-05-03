@@ -1,3 +1,6 @@
+namespace FinalProject3112.Interfaces;
+using FinalProject3112.Models;
+
 public interface IUserRepository
 {
     public void AddUser(User user);

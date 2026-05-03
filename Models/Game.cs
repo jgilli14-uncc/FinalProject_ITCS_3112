@@ -1,10 +1,12 @@
+namespace FinalProject3112.Models;
+
 public class Game
 {
     public int gameId { get; set; }
     public string name { get; set; }
-    private string genre { get; set; }
-    private string publisher { get; set; }
-    private string dateReleased { get; set; }
+    public string genre { get; set; }
+    public string publisher { get; set; }
+    public string dateReleased { get; set; }
     public string platform { get; set; }
     public double averageRating { get; set; }
 

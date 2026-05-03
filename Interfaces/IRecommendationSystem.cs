@@ -1,4 +1,7 @@
+namespace FinalProject3112.Interfaces;
+using FinalProject3112.Models;
+
 public interface IRecommendationSystem
 {
-    public GenerateRecommendations(int userID);
+    public List<Game> GenerateRecommendations(int userID);
 }

@@ -9,7 +9,12 @@ public class Game
     public string dateReleased { get; set; }
     public string platform { get; set; }
     public double averageRating { get; set; }
+    public PlayStatus status { get; set; }
 
+    public Game()
+    {
+        
+    }
     public Game(string name, string genre, string publisher, string dateReleased, string platform)
     {
         this.name = name;
@@ -17,6 +22,7 @@ public class Game
         this.publisher = publisher;
         this.dateReleased = dateReleased;
         this.platform = platform;
+        this.status = PlayStatus.Unplayed;
     }
     public void DisplayInfo()
     {

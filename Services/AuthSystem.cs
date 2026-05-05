@@ -1,5 +1,8 @@
 using FinalProject3112.Interfaces;
 using FinalProject3112.Models;
+using FinalProject3112.Repositories;
+
+namespace FinalProject3112.Services;
 
 public class AuthSystem : IAuthSystem
 {
@@ -11,7 +14,7 @@ public class AuthSystem : IAuthSystem
         sessionID = 0;
     }
 
-    private static AuthSystem getInstance()
+    public static AuthSystem getInstance()
     {
         if (instance == null)
         {
@@ -20,27 +23,30 @@ public class AuthSystem : IAuthSystem
         return instance;
     }
 
-    public bool Login(int userID, string password)
+    public User Login(string username, string password)
     {
-        if (userID < 0)
+        for (int i = 0; i < UserRepository.getInstance().userDatabase.Count; i++)
         {
-            Console.WriteLine("Invalid User ID");
+            User user = UserRepository.getInstance().userDatabase[i];
+            if (user.username == username && user.CheckPassword(password))
+            {
+                sessionID = user.userID;
+                return user;
+            }
         }
-
-        if (string.IsNullOrEmpty(password))
-        {
-            Console.WriteLine("Invalid Password");
-        }
-        return true;
+        return null;
     }
 
     public void Logout()
     {
-        
+        sessionID = 0;
     }
 
     public AuthLevel Verify(int userID)
     {
-        
+        User user = UserRepository.getInstance().getUserbyID(userID);
+        if (user == null) return AuthLevel.NOT_VERIFIED;
+        if (user is SuperUser) return AuthLevel.VERIFIED_ADMIN;
+        return AuthLevel.VERIFIED;
     }
 }

@@ -5,6 +5,11 @@ public class BasicUser : User
     public List<Game> gameList { get; set; }
     public List<Rating> ratingList { get; set; }
 
+    public BasicUser() : base("", "")
+    {
+        gameList = new List<Game>();
+        ratingList = new List<Rating>();
+    }
     public BasicUser(string username, string password) : base(username, password)
     {
         gameList = new List<Game>();

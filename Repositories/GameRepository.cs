@@ -6,6 +6,8 @@ public class GameRepository : IGameRepository
 {
     public static GameRepository instance;
     public List<Game> gameDatabase { get; set; }
+    public int gameIdCounter = 1;
+
 
     private GameRepository()
     {
@@ -19,6 +21,7 @@ public class GameRepository : IGameRepository
     }
     public void AddGame(Game game)
     {
+        game.gameId = gameIdCounter++;
         gameDatabase.Add(game);
     }
     public void RemoveGame(Game game)
@@ -40,7 +43,12 @@ public class GameRepository : IGameRepository
     }
     public Game GetGameById(int id)
     {
-        return gameDatabase.FirstOrDefault(g => g.gameId == id);
+        foreach (Game game in gameDatabase)
+        {
+            if (game.gameId == id)
+                return game;
+        }
+        return null;
     }
     public List<Game> GetAllGames()
     {

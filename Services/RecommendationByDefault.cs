@@ -2,10 +2,10 @@ namespace FinalProject3112.Services;
 using FinalProject3112.Interfaces;
 using FinalProject3112.Models;
 
-public class RecommendationByDefault : IRecommendationSystem
+public class RecommendationByDefault : RecommendationSystem
 {
-    public List<Game> GenerateRecommendations(int userID)
+    public override List<Game> filter(List<Game> games, BasicUser user)
     {
-        throw new NotImplementedException();
+        return games;
     }
 }

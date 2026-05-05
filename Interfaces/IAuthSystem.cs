@@ -3,7 +3,7 @@ namespace FinalProject3112.Interfaces;
 
 public interface IAuthSystem
 {
-    public bool Login(int userID, string password);
+    public User Login(string username, string password);
     public void Logout();
     public AuthLevel Verify(int userID);
 }

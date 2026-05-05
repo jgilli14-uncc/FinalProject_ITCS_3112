@@ -6,6 +6,7 @@ public class UserRepository : IUserRepository
 {
     public static UserRepository instance;
     public List<User> userDatabase { get; set; }
+    public int userIdCounter = 1;
 
     private UserRepository()
     {
@@ -19,6 +20,7 @@ public class UserRepository : IUserRepository
     }
     public void AddUser(User user)
     {
+        user.userID = userIdCounter++;
         userDatabase.Add(user);
     }
     public void RemoveUser(User user)

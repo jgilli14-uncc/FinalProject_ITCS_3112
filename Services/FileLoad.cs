@@ -3,15 +3,17 @@ using System.Text.Json;
 using FinalProject3112.Models;
 using FinalProject3112.Repositories;
 
+//change to fileService
+
+//make an interface for this class
+
 public class FileLoad
 {
     private static FileLoad instance;
-
     private static string gamesPath = "data/games.json";
     private static string usersPath = "data/users.json";
     private static string ratingsPath = "data/ratings.json";
 
-    
 
     private FileLoad() { }
 
@@ -85,6 +87,7 @@ public class FileLoad
         string json = JsonSerializer.Serialize(users);
         File.WriteAllText(usersPath, json);
     }
+    //D in SOLID
 
     public void SaveRatingsFile()
     {

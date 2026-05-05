@@ -8,7 +8,7 @@ public class GameRepository : IGameRepository
     public List<Game> gameDatabase { get; set; }
     public int gameIdCounter = 1;
 
-
+    //build 
     private GameRepository()
     {
         gameDatabase = new List<Game>();

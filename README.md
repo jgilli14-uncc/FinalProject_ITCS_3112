@@ -1,7 +1,7 @@
 # Game Library & Recommendation System
 
-A console application for managing a personal video game library 
-with a built-in recommendation system.
+A console application for managing a personal video game library with a built-in rating system, and a recommendation
+system. Made for people who play video games and want to find new games to play.
 
 ## Team Members
 JP Gilliam<br>

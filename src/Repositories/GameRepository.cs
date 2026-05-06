@@ -4,7 +4,7 @@ using FinalProject3112.Interfaces;
 
 public class GameRepository : IGameRepository
 {
-    public static GameRepository instance;
+    private static GameRepository instance;
     public List<Game> gameDatabase { get; set; }
     public int gameIdCounter = 1;
 

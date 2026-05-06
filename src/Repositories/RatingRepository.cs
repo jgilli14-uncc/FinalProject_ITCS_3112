@@ -4,7 +4,7 @@ using FinalProject3112.Interfaces;
 
 public class RatingRepository : IRatingRepository
 {
-    public static RatingRepository instance;
+    private static RatingRepository instance;
     public List<Rating> ratingDatabase { get; set; }
 
 

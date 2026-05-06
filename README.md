@@ -4,9 +4,9 @@ A console application for managing a personal video game library
 with a built-in recommendation system.
 
 ## Team Members
-JP Gilliam
-William Sittiphone
-Jacob Younan
+JP Gilliam<br>
+William Sittiphone<br>
+Jacob Younan<br>
 
 ## Requirements
 - .NET 10.0 SDK (https://dotnet.microsoft.com/download)
@@ -40,3 +40,14 @@ Jacob Younan
 | Strategy     | Behavioral | RecommendationSystem.cs | All          | Allows for interchangeable recommendation filters. The class' interface defines the action method that returns a list of games, and there are three filter types: default, genre, and publisher.                                        |
 
 ## Design Decisions
+- The repositories (GameRepository, RatingRepository, and UserRepository) follow the singleton pattern because only one 
+instance of each repository is required for the program to function.
+- FileService follows the template pattern because it allows for the creation of subclasses (GameFile, RatingFile, 
+UserFile) that override specific steps of the algorithm.
+- RecommendationSystem follows the strategy pattern because it allows for interchangeable recommendation filters 
+(RecommendationByDefault, RecommendationByGenre, RecommendationByPublisher).
+- The factory method pattern was originally going to be used for adding different types of games or users, but the 
+current implementation for both games and users was more convenient.
+- Some interfaces, like IGameRepository, IFileService, and IRecommendationSystem, were used to implement design patterns.
+- Other interfaces, like IAccountService, IAuthSystem, IBackLog, and ILibraryService were used to define different 
+functionalities within the program.

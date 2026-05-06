@@ -6,7 +6,7 @@ if a new line doesn't show up.
 
 ## Team Members
 JP Gilliam<br>
-William Sittiphone<br>
+William Sitthiphone<br>
 Jacob Younan
 
 ## Requirements

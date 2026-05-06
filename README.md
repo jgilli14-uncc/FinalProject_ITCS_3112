@@ -13,9 +13,8 @@ Jacob Younan<br>
 
 ## How to Run
 1. Open terminal
-2. Navigate to the project directory
-3. Clone the repository using "cd FinalProject_ITCS_3112"
-4. Run the program using "dotnet run"
+2. Navigate to the project directory using "cd FinalProject_ITCS_3112"
+3. Run the program using "dotnet run"
 
 ## OOP Features
 | OOP Feature      | File Name                    | Line Numbers | Purpose                                                                                          |

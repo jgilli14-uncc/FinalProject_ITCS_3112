@@ -7,7 +7,7 @@ public class GamesFileService : FileService
 {
     protected override string GetFilePath()
     {
-        return "src/data/games.json";
+        return "docs/games.json";
     }
 
     protected override void Deserialize(string json)

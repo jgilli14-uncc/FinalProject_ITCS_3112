@@ -10,16 +10,16 @@ namespace FinalProject3112
     {
         static void Main(string[] args)
         {
-            FileLoad.getInstance().LoadGamesFile();
-            FileLoad.getInstance().LoadUsersFile();
-            FileLoad.getInstance().LoadRatingsFile();
+            new GamesFileService().Load();
+            new UserFileService().Load();
+            new RatingFileService().Load();
 
             Menu menu = new Menu();
             menu.Start();
 
-            FileLoad.getInstance().SaveGamesFile();
-            FileLoad.getInstance().SaveUsersFile();
-            FileLoad.getInstance().SaveRatingsFile();
+            new GamesFileService().Save();
+            new UserFileService().Save();
+            new RatingFileService().Save();
         }
     }
 }

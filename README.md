@@ -12,9 +12,10 @@ Jacob Younan<br>
 - .NET 10.0 SDK (https://dotnet.microsoft.com/download)
 
 ## How to Run
-1. Clone the repository
-2. cd FinalProject_ITCS_3112
-3. dotnet run
+1. Open terminal
+2. Navigate to the project directory
+3. Clone the repository using "cd FinalProject_ITCS_3112"
+4. Run the program using "dotnet run"
 
 ## OOP Features
 | OOP Feature      | File Name                    | Line Numbers | Purpose                                                                                          |
@@ -49,5 +50,5 @@ UserFile) that override specific steps of the algorithm.
 - The factory method pattern was originally going to be used for adding different types of games or users, but the 
 current implementation for both games and users was more convenient.
 - Some interfaces, like IGameRepository, IFileService, and IRecommendationSystem, were used to implement design patterns.
-- Other interfaces, like IAccountService, IAuthSystem, IBackLog, and ILibraryService were used to define different 
+- Other interfaces, like IAccountService, IAuthSystem, IBackLog, and ILibraryService, were used to define different 
 functionalities within the program.

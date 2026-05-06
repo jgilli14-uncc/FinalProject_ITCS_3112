@@ -7,7 +7,7 @@ public class RatingFileService : FileService
 {
     protected override string GetFilePath()
     {
-        return "data/ratings.json";
+        return "src/data/ratings.json";
     }
 
     protected override void Deserialize(string json)

@@ -9,13 +9,13 @@
 
   <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.55.2" />
-    <Content Include="data\games.json">
+    <Content Include="src\data\games.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\users.json">
+    <Content Include="src\data\users.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\ratings.json">
+    <Content Include="src\data\ratings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

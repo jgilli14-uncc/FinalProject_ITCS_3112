@@ -6,7 +6,7 @@ system. Made for people who play video games and want to find new games to play.
 ## Team Members
 JP Gilliam<br>
 William Sittiphone<br>
-Jacob Younan<br>
+Jacob Younan
 
 ## Requirements
 - .NET 10.0 SDK (https://dotnet.microsoft.com/download)

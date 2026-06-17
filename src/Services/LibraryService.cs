@@ -112,4 +112,65 @@ public class LibraryService : ILibraryService
         AnsiConsole.MarkupLine($"[green]{removedGame.name} removed from library![/]");
         Console.ReadLine();
     }
+    // search RAWG and let the user pick a game to add, instead of typing details manually
+    public void AddGameFromRawg(BasicUser currentUser)
+    {
+        Console.Clear();
+        AnsiConsole.MarkupLine("[green]Add Game from RAWG[/]");
+        Console.WriteLine();
+
+        Console.Write("Search for a game: ");
+        string searchTerm = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            AnsiConsole.MarkupLine("[red]Search term cannot be empty.[/]");
+            Console.ReadLine();
+            return;
+        }
+
+        IRawgImportService rawgService = new RawgImportService(RawgConfig.ApiKey);
+
+        AnsiConsole.MarkupLine("[yellow]Searching RAWG...[/]");
+        List<Game> results = rawgService.SearchGamesAsync(searchTerm).GetAwaiter().GetResult();
+
+        if (results.Count == 0)
+        {
+            AnsiConsole.MarkupLine("[yellow]No results found.[/]");
+            Console.ReadLine();
+            return;
+        }
+
+        Console.Clear();
+        AnsiConsole.MarkupLine("[green]Search Results[/]");
+        Console.WriteLine();
+
+        for (int i = 0; i < results.Count; i++)
+        {
+            Game g = results[i];
+            Console.WriteLine($"{i + 1}. {g.name} | {g.genre} | {g.dateReleased} | {g.platform}");
+        }
+
+        Console.WriteLine();
+        Console.Write("Enter the number of the game to add (or press Enter to cancel): ");
+        string input = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(input))
+            return;
+
+        int choice;
+        if (!int.TryParse(input, out choice) || choice < 1 || choice > results.Count)
+        {
+            AnsiConsole.MarkupLine("[red]Invalid choice.[/]");
+            Console.ReadLine();
+            return;
+        }
+
+        Game selectedGame = results[choice - 1];
+        GameRepository.getInstance().AddGame(selectedGame);
+        currentUser.gameList.Add(selectedGame);
+
+        AnsiConsole.MarkupLine($"[green]'{selectedGame.name}' added to your library![/]");
+        Console.ReadLine();
+    }
 }

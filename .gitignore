@@ -480,3 +480,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# RAWG API key file (gitignored to avoid accidentally committing a real key to a public repo)
+src/External/RawgConfig.cs

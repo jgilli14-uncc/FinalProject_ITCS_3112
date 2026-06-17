@@ -10,7 +10,11 @@ public class Game
     public string platform { get; set; }
     public double averageRating { get; set; }
     public PlayStatus status { get; set; }
-    
+
+    public Game()
+    {
+        
+    }    
     public Game(string name, string genre, string publisher, string dateReleased, string platform)
     {
         this.name = name;

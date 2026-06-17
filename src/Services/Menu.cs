@@ -101,12 +101,13 @@ namespace FinalProject3112.Services
                 var choice = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                         .Title("What would you like to do?")
-                        .AddChoices("View Games", "Add Game", "Remove Game", "Back"));
+                        .AddChoices("View Games", "Add Game","Add Game (Search RAWG)", "Remove Game", "Back"));
  
                 switch (choice)
                 {
                     case "View Games":  libraryService.ViewLibrary(sessionService.CurrentUser); break;
                     case "Add Game":    libraryService.AddGameToLibrary(sessionService.CurrentUser); break;
+                    case "Add Game (Search RAWG)":  libraryService.AddGameFromRawg(sessionService.CurrentUser); break;
                     case "Remove Game": libraryService.RemoveGameFromLibrary(sessionService.CurrentUser); break;
                     case "Back":        return;
                 }

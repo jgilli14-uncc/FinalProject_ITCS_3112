@@ -6,4 +6,5 @@ public interface ILibraryService
     void ViewLibrary(BasicUser currentUser);
     void AddGameToLibrary(BasicUser currentUser);
     void RemoveGameFromLibrary(BasicUser currentUser);
+    void AddGameFromRawg(BasicUser currentUser);
 }

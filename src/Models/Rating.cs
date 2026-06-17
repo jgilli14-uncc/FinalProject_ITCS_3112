@@ -6,11 +6,7 @@ public class Rating
     public int userID { get; set; }
     public double ratingNum { get; set; }
     public string ratingText { get; set; }
-
-    public Rating()
-    {
-        
-    }
+    
     public Rating(int gameID, int userID, double ratingNum, string ratingText)
     {
         this.gameID = gameID;

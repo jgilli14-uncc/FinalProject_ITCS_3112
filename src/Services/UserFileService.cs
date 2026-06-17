@@ -7,7 +7,7 @@ public class UserFileService : FileService
 {
     protected override string GetFilePath()
     {
-        return "src/data/users.json";
+        return "docs/users.json";
     }
 
     protected override void Deserialize(string json)
